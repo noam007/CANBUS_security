@@ -43,8 +43,6 @@ Thumbs.db # Windows
 desktop.ini # Windows
 
 # --- Log and Database files ---
-*.log
-
 *.sqlite
 /my_database.db
 /candump.log
