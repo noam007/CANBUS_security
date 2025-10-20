@@ -26,6 +26,7 @@ def Allowed_CAN_IDs(conn):
                 can_id TEXT  )
             ''')
 
+    # Update table with values
     for can_id in unique_list:
         cursor.execute('''
             INSERT INTO Allowed_CAN_ID (can_id) 
