@@ -30,7 +30,6 @@ def create_db(conn):
 def update_db(conn, db_file):
     cursor = conn.cursor()
 
-
     with open(db_file, 'r') as CAM_log:
         for line in CAM_log:
             line = line.strip()
@@ -66,6 +65,7 @@ def update_db(conn, db_file):
 
 def DB_quarry(conn):
 
+    # Create a cursor object from the connection to execute SQL queries
     cursor = conn.cursor()
 
     # gets a single line where it's time is '22:20:23:542'
@@ -108,4 +108,4 @@ if __name__ == "__main__":
     DB_quarry(conn)
 
     # Now, close the connection
-    conn.close()
+    # conn.close()

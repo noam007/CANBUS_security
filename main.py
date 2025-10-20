@@ -10,6 +10,8 @@ if __name__ == '__main__':
     DB_update.update_db(conn, "can_dump.log")
 
     DB_update.DB_quarry(conn)
+
+    
     # conn = sqlite3.connect('my_database.db')
     #
     # create_db(conn)
