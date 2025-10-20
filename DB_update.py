@@ -30,6 +30,7 @@ def create_db(conn):
 def update_db(conn, db_file):
     cursor = conn.cursor()
 
+
     with open(db_file, 'r') as CAM_log:
         for line in CAM_log:
             line = line.strip()
