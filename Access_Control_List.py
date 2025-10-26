@@ -1,6 +1,6 @@
 import sqlite3
 
-def Allowed_CAN_IDs(conn):
+def allowed_can_ids(conn):
 
     # Create a cursor object from the connection to execute SQL queries
     cursor = conn.cursor()
@@ -18,7 +18,7 @@ def Allowed_CAN_IDs(conn):
 
     # Convert the set back to a list if needed
     unique_list = list(unique_set)
-    print(unique_list)
+    # print(unique_list)
 
     # Create a Table named : 'Allowed_CAN_ID'
     cursor.execute('''
@@ -33,6 +33,15 @@ def Allowed_CAN_IDs(conn):
             VALUES (?)
             ''', (can_id,))
 
+    return unique_list
+
+
+
+def print_allowed_can_ids(conn):
+
+    # Create a cursor object from the connection to execute SQL queries
+    cursor = conn.cursor()
+
     # printer the values in the Table
     print(cursor.execute('Select * FROM Allowed_CAN_ID'))
     # Fetch and print all rows from the result
@@ -41,6 +50,8 @@ def Allowed_CAN_IDs(conn):
         print(row)
 
 
+
 if __name__ == "__main__":
      conn = sqlite3.connect('my_database.db')
-     Allowed_CAN_IDs(conn)
+     allowed_can_ids(conn)
+     print_allowed_can_ids(conn)
